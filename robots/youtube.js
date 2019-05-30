@@ -29,7 +29,7 @@ async function robot() {
                 const app = express()
 
                 const server = app.listen(port, () => {
-                    console.log(`> [youtube-robot] Listening on ${port}`)
+                    console.log(`> [youtube-robot] Listening on ${port} `)
                 })
 
                 resolve({

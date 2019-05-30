@@ -58,7 +58,7 @@ async function robot () {
                     return reject(error)
                     }
 
-                    console.log(`> [video-robot] Image converted: ${inputFile}`)
+                    console.log(`> [video-robot] Image converted: ${inputFile} `)
                     resolve()
                 })
             })

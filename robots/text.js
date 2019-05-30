@@ -80,7 +80,7 @@ async function robot() {
     }
 
     async function fetchKeywordsOfAllSentences(content) {
-        console.log('> [text-robot] Starting to fetch keywords from Watson')
+        console.log('> [text-robot] Starting to fetch keywords from Watson ')
 
         for (const sentence of content.sentences) {
             console.log(`> [text-robot] Sentence: "${sentence.text}"`)
