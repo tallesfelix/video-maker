@@ -9,7 +9,7 @@ ffmpeg.setFfmpegPath(ffmpegPath)
 ffmpeg.setFfprobePath(ffprobePath)
 
 async function robot () {
-
+    console.log(`> [video-robot] Starting...`)
     const content = state.load()
 
     await convertAllImages(content)
@@ -58,7 +58,7 @@ async function robot () {
                     return reject(error)
                     }
 
-                    console.log(`> Image converted: ${inputFile}`)
+                    console.log(`> [video-robot] Image converted: ${inputFile}`)
                     resolve()
                 })
             })
@@ -117,7 +117,7 @@ async function robot () {
                     return reject(error)
                 }
 
-                console.log(`> Sentence created: ${outputFile}`)
+                console.log(`> [video-robot] Sentence created: ${outputFile}`)
                 resolve()
             })
         })
@@ -132,7 +132,7 @@ async function robot () {
                     return reject(error)
                 }
 
-                console.log('> Creating YouTube thumbnail')
+                console.log('> [video-robot] Youtube thumbnail created')
                 resolve()
             })
         })
@@ -186,7 +186,7 @@ async function robot () {
             videoshow(images, videoOptions)
                 .save("./content/video.mp4")
                 .on("start", function(command) {
-                    console.log("> Iniciando processo do Ffmpeg: ", command)
+                    console.log("> [video-robot] Starting ffmpeg process: ", command)
                 })
                 .on("error", function(err, stdout, stderr) {
                     console.error("> Error: ", err)
@@ -194,13 +194,14 @@ async function robot () {
                     reject(err)
                 })
                 .on("end", function(output) {
-                    console.error("> Video criado em:", output)
+                    console.error("> [video-robot] Video created at:", output)
                     resolve()
                 });
         });
     }
 
     async function renderVideo(content) {
+        console.log(`> [video-robot] Starting ffmpeg`)
         await renderVideoWithNode(content)
     }
 }
