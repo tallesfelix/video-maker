@@ -1,6 +1,6 @@
-#Credentials format
+## Credentials format
 
-##Algorithmia
+## Algorithmia
 
 File: `algorithmia.json`
 
